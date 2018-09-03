@@ -1,12 +1,15 @@
 var https = require('https');
 
+
 //gets HTML chunks and console.log each chunk of data as it is received,
 //mconcatenated with a newline character ('\n') so you can visualize each chunk.
-function getAndPrintHTMLChunks () {
+function getAndPrintHTML () {
+
+  var fileData = [];
 
   var requestOptions = {
     host: 'sytantris.github.io',
-    path: '/http-examples/step1.html'
+    path: '/http-examples/step2.html'
   };
 
   //gets chunk from host and given file path.
@@ -17,12 +20,17 @@ function getAndPrintHTMLChunks () {
 
 
     response.on('data', function (data) {
-      console.log('Chunk Received. Data is:', data + "\n");
+
+
+      // console.log('Chunk Received. Data is:', data + "\n");
+
     });
 
     response.on('end', function() {
       console.log('Response stream complete.');
     });
+
+    console.log(fileData);
 
 
   });
@@ -31,4 +39,4 @@ function getAndPrintHTMLChunks () {
 
 }
 
-getAndPrintHTMLChunks();
+getAndPrintHTML();
