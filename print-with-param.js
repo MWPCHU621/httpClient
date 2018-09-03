@@ -22,15 +22,16 @@ function getAndPrintHTML(options) {
 
     response.on('data', function (data) {
       fileData += (data + "\n");
-      console.log(fileData);
+      //console.log(fileData);
       //console.log('Chunk Received. Data is:', data + "chunk count is: " + count);
     });
 
     response.on('end', function() {
       console.log('Response stream complete.');
+      console.log(fileData);
+
     });
 
-    console.log(fileData);
 
 
   });
