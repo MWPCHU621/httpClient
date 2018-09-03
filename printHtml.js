@@ -6,7 +6,7 @@ function getHTML (options, callback) {
 
 
 
-  //gets chunk from host and given file path.
+  //gets chunk from host and given file path. and prints it out using a callback function
   https.get(options, function(response)
   {
 
@@ -25,8 +25,6 @@ function getHTML (options, callback) {
       callback(fileData);
 
     });
-
-
 
   });
 
