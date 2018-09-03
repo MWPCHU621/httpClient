@@ -26,10 +26,11 @@ function getAndPrintHTML() {
     });
 
     response.on('end', function() {
-      console.log('Response stream complete.');
+      //console.log('Response stream complete.');
+      console.log(fileData);
     });
 
-    console.log(fileData);
+
 
 
   });
